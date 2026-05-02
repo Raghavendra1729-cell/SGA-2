@@ -48,7 +48,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/departments/{id}/edit")
-    public String showUpdateDepartment(@PathVariable Long id, Model model) {
+    public String showUpdateDepartment(@PathVariable("id") Long id, Model model) {
         Department department = departmentService.getDepartmentById(id);
         DepartmentForm departmentForm = new DepartmentForm();
         departmentForm.setId(department.getId());
@@ -61,7 +61,7 @@ public class DepartmentController {
     }
 
     @PostMapping("/departments/{id}")
-    public String updateDepartment(@PathVariable Long id,
+    public String updateDepartment(@PathVariable("id") Long id,
                                    @Valid @ModelAttribute("departmentForm") DepartmentForm departmentForm,
                                    BindingResult bindingResult,
                                    Model model,

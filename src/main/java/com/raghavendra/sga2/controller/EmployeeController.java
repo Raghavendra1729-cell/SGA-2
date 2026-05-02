@@ -53,7 +53,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees/{id}/edit")
-    public String showUpdateEmployee(@PathVariable Long id, Model model) {
+    public String showUpdateEmployee(@PathVariable("id") Long id, Model model) {
         Employee employee = employeeService.getEmployeeById(id);
         EmployeeForm employeeForm = new EmployeeForm();
         employeeForm.setId(employee.getId());
@@ -68,7 +68,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees/{id}")
-    public String updateEmployee(@PathVariable Long id,
+    public String updateEmployee(@PathVariable("id") Long id,
                                  @Valid @ModelAttribute("employeeForm") EmployeeForm employeeForm,
                                  BindingResult bindingResult,
                                  Model model,
