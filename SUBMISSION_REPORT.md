@@ -11,7 +11,7 @@ The application supports the required `create`, `read`, and `update` operations 
 
 GitHub repository:
 
-`https://github.com/Raghavendra1729-cell/SGA-2.git`
+`https://github.com/Raghavendra1729-cell/SGA-2`
 
 ## Entity Relationship Design
 
@@ -240,7 +240,7 @@ Files:
 ### Entity Mapping Example
 
 ```java
-@ManyToOne(fetch = FetchType.LAZY, optional = false)
+@ManyToOne(fetch = FetchType.EAGER, optional = false)
 @JoinColumn(name = "department_id", nullable = false)
 private Department department;
 ```
@@ -276,25 +276,21 @@ public Department updateDepartment(Long id, DepartmentForm form) {
 
 ## Screenshots Section
 
-Add screenshots here after running the application locally.
+### 1. Dashboard Page
 
-Suggested screenshots:
-
-1. Dashboard page showing both create forms and data tables
-2. Department edit page
-3. Employee edit page
-4. Inner join report section
-5. H2 console or successful test execution
-
-Markdown placeholders:
-
-```md
 ![Dashboard](docs/screenshots/dashboard.png)
+
+### 2. Department Update Page
+
 ![Department Edit](docs/screenshots/department-edit.png)
+
+### 3. Employee Update Page
+
 ![Employee Edit](docs/screenshots/employee-edit.png)
+
+### 4. Full Dashboard with Inner Join Report
+
 ![Join Report](docs/screenshots/join-report.png)
-![Tests](docs/screenshots/tests.png)
-```
 
 ## Testing
 
@@ -315,6 +311,17 @@ Test classes:
 - `src/test/java/com/raghavendra/sga2/repository/EmployeeRepositoryTest.java`
 - `src/test/java/com/raghavendra/sga2/service/DepartmentServiceTest.java`
 - `src/test/java/com/raghavendra/sga2/service/EmployeeServiceTest.java`
+
+Test command used:
+
+```bash
+./mvnw test
+```
+
+Result:
+
+- Build completed successfully
+- 7 tests passed
 
 ## Challenges Faced and Solutions
 
@@ -389,4 +396,4 @@ The application satisfies the assignment requirements by providing:
 
 ## GitHub URL
 
-`https://github.com/Raghavendra1729-cell/SGA-2.git`
+`https://github.com/Raghavendra1729-cell/SGA-2`
